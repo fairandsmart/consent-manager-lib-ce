@@ -1,11 +1,11 @@
 # Fair&Smart Right Consents TypeScript support
 
-This project implements TypeScript definitions and API helpers for the [Fair&Smart Right Consents API](https://cmback.dev.env.fairandsmart.tech/swagger-ui/). It's meant for use in [Right Consents Front-end](https://github.com/fairandsmart/consent-manager-lib), but should be general enough to use in any project. The code is maintained and based on the [Right Consents Back-end](https://github.com/fairandsmart/consent-manager-back) API resources and models, to be as close as possible to the true representation of the resources.
+This project implements TypeScript definitions and API helpers for the [Fair&Smart Right Consents API](https://cmback.dev.env.fairandsmart.tech/swagger-ui/). It's meant for use in [Right Consents Front-end](https://github.com/fairandsmart/consent-manager-lib-ce), but should be general enough to use in any project. The code is maintained and based on the [Right Consents Back-end](https://github.com/fairandsmart/consent-manager-back) API resources and models, to be as close as possible to the true representation of the resources.
 
 # Install
 
 ```
-npm i @fairandsmart/consent-manager
+npm i @fairandsmart/consents-ce
 ```
 
 # Interfaces and Enums
@@ -13,7 +13,7 @@ npm i @fairandsmart/consent-manager
 All the interface type definitions and enums are for type info only - everything will compile out. Only the API helpers produce real JavaScript output. You can import types from each service defined on [the API](https://cmback.dev.env.fairandsmart.tech/swagger-ui/):
 
 ```typescript
-import { ModelVersionDtoLight, ModelsResource } from '@fairandsmart/consent-manager/models';
+import { ModelVersionDtoLight, ModelsResource } from '@fairandsmart/consents-ce/models';
 ```
 
 
@@ -22,7 +22,7 @@ import { ModelVersionDtoLight, ModelsResource } from '@fairandsmart/consent-mana
 In addition to the types, there are also simple helper functions for each API endpoint. They define the inputs and outputs to that endpoint, and will call a user-provided function with HTTP request info that you can then use to make an HTTP request. This pattern was used so the API helpers could provide full type information. These helpers are not a full API client - they assist in building one. An example:
 
 ```typescript
-import { RcHttpClientConfig } from '@fairandsmart/consent-manager';
+import { RcHttpClientConfig } from '@fairandsmart/consents-ce';
 
 function http(config: RcHttpClientConfig): Observable<ModelEntryDto> {
     // fill in the API key, handle OAuth, etc., then make an HTTP request using the config.
@@ -52,7 +52,7 @@ To setup the helpers properly, see the Initialization section below.
 If you wish to use the API helpers, you need to initialize the library in your project:
 
 ```typescript
-import { RightConsents } from '@fairandsmart/consent-manager';
+import { RightConsents } from '@fairandsmart/consents-ce';
 
 RightConsents.init({
     apiRoot: 'http://localhost:4287',
@@ -69,11 +69,11 @@ It is possible to import all services from `@fairandsmart/consent-manager` direc
 
 ```typescript
 // good
-import { getEntry } from '@fairandsmart/consent-manager/models';
+import { getEntry } from '@fairandsmart/consents-ce/models';
 getEntry(...);
 
 // works, but not as good. Use for disambiguity if needed
-import { ModelsResources } from '@fairandsmart/consent-manager';
+import { ModelsResources } from '@fairandsmart/consents-ce';
 ModelsResources.getEntry(...);
 ```
 
@@ -83,7 +83,7 @@ Some imports also contains helpers for parsing and interpreting the resources:
 
 ```typescript
 import { map } from 'rxjs';
-import { ModelEntryDto, ModelEntryHelper, getEntry } from '@fairandsmart/consent-manager/models';
+import { ModelEntryDto, ModelEntryHelper, getEntry } from '@fairandsmart/consents-ce/models';
 
 getEntry(modelId).pipe(
     map((entry: ModelEntryDto) => ModelEntryHelper.getActiveVersion(entry))
@@ -102,7 +102,7 @@ npm run build
 # pack for local import
 npm run pack
 # install local version in a different project
-npm i {lib-repository}/lib/fairandsmart-consent-manager-{VERSION}.tgz
+npm i {lib-repository}/lib/fairandsmart-consents-ce-{VERSION}.tgz
 ```
 
 # Contribute 

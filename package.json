@@ -1,5 +1,5 @@
 {
-  "name": "@fairandsmart/consent-manager",
+  "name": "@fairandsmart/consents-ce",
   "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
