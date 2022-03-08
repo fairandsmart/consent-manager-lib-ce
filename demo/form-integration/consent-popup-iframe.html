@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="fs-header">
+    <div class="header-content">
+        <div><a href="index.html"><img src="https://www.fairandsmart.com/wp-content/themes/fairsmart/dist/images/logo_98a3bc2c.svg" alt="logo"></a></div>
+        <div class="navigation">
+            <span class="title">Right Consents - Examples - Consent window</span>
+        </div>
+    </div>
+</header>
+<section id="content">
+    <h1>Collecte d'un consentement dans une nouvelle fenêtre</h1>
+    <p class="summary">Dans cet exemple, le bouton "Collecter le consentement" ouvre une nouvelle fenêtre dans laquelle l'utilisateur peut donner son consentement.</p>
+    <p class="info">Une fois la fenêtre fermée, une callback est envoyée à cette page pour effectuer les traitements liés à cette collecte.</p>
+    <hr>
+    <!-- Demo code below -->
+
+    <div class="action" id="block">
+        <button class="submit-btn" id="submit" onclick="collect()">Donner mon consentement</button>
+    </div>
+    <div class="action hidden" id="message">Votre consentement a bien été envoyé</div>
+
+    <script src="../../_bundles/consent.js"></script>
+    <script>
+        function collect() {
+            /** La page attend la fin de la collecte avant d'afficher autre chose. On cache les éléments non important */
+            const block = document.getElementById('block');
+            const message = document.getElementById('message');
+            block.classList.add('hidden');
+
+            /** Création de l'objet de collecte */
+            const consentCollector = new FairAndSmart.ConsentCollector({
+                tokenBrokerEndpoint: 'http://localhost:3001/profile/form',
+                consentContext: {
+                    subject: "Demo Subject",
+                    author: "Demo Subject",
+                    origin: "WEBFORM",
+                    confirmation: "NONE",
+                    language: "en",
+                    userinfos: {},
+                    validity: "P6M",
+                    layout: "layout.001"
+                },
+                mode: 'iframe'
+            });
+
+            /** Lancement de la collecte */
+            consentCollector.collect()
+                .then(() => {
+                    /** Callback de réponse : la collecte est terminée */
+                    block.classList.add('hidden');
+                    message.classList.remove('hidden');
+                    /** Vous pouvez vérifier ici la réponse de l'utilisateur */
+                })
+                .catch((err) => {
+                    /** Callback d'erreur, quelque chose s'est mal passé. On réinitialise le boutton pour réessayer */
+                    console.error(err);
+                    block.classList.remove('hidden');
+                })
+        }
+    </script>
+    <!-- End demo code -->
+</section>
+</body>
+</html>
