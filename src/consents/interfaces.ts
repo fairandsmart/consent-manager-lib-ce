@@ -76,6 +76,9 @@ export interface ConsentContext {
 
     /** Additional information needed for user confirmation */
     confirmationConfig?: { [key: string]: string };
+
+    /** Specifies whether the consent form should be captured in the receipt. */
+    attachFormReceipt?: boolean;
 }
 
 /** Used to generate a Receipt from a transaction id */
