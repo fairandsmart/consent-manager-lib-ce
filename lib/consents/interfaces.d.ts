@@ -41,6 +41,8 @@ export interface ConsentContext {
     validity?: string;
     /** Specifies whether the consent can be updated afterwards. */
     updatable?: boolean;
+    /** Silent Consent collect disable fetching existing values for the declared subject */
+    silent?: boolean;
     /** Any relevant informations about the user that will be persisted in the receipt */
     userinfos?: {
         [key: string]: string;
