@@ -79,6 +79,12 @@ export interface ConsentContext {
 
     /** Additional information needed for user confirmation */
     confirmationConfig?: { [key: string]: string };
+
+    /** The reference to the 'theme' that will apply */
+    theme?: string;
+
+    /** The reference to the 'email' mode for notification */
+    notification?: string;
 }
 
 /** Used to generate a Receipt from a transaction id */
