@@ -147,8 +147,6 @@ export interface FormLayout extends ModelData {
     type: 'layout';
     info: string;
     elements: string[];
-    theme?: string;
-    notification?: string;
     orientation?: FormLayoutOrientation;
     existingElementsVisible?: boolean;
     validityVisible?: boolean;
