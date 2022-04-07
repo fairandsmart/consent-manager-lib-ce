@@ -1,6 +1,6 @@
 import { RecordDto } from '../records';
 import { ConsentContext } from './interfaces';
-import { ConsentOrigin, ModelEntryDto, ModelEntryHelper } from '../models';
+import { ConsentOrigin, ModelEntryDto } from '../models';
 
 export class ConsentHelper {
   static generateContextFromRecord(entry: ModelEntryDto, record: RecordDto, lang = entry.defaultLanguage): ConsentContext {

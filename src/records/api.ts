@@ -1,31 +1,33 @@
 import { Observable } from 'rxjs';
 import { RightConsents } from '../api';
-import { ExtractionConfigDto, ExtractionResultDto, RecordsMap } from './interfaces';
+import { ExtractionFilter, ExtractionResultDto, RecordFilter, RecordsMap } from './interfaces';
 import { RCApiOptions } from '../http';
+import { CollectionPage } from '../common';
 
-export function listRecordsOfSubject(subject: string, options?: RCApiOptions): Observable<RecordsMap> {
+export function listRecords(filter: RecordFilter, options?: RCApiOptions): Observable<RecordsMap> {
     return RightConsents.http<RecordsMap>({
         method: 'GET',
         url: `${RightConsents.config.apiRoot}/records`,
-        params: { subject },
+        params: filter,
         options
     });
 }
 
-export function extractRecords(config: ExtractionConfigDto, options?: RCApiOptions): Observable<ExtractionResultDto[]> {
-    return RightConsents.http<ExtractionResultDto[]>({
+export function extractRecords(filter: ExtractionFilter, options?: RCApiOptions):
+    Observable<CollectionPage<ExtractionResultDto>> {
+    return RightConsents.http<CollectionPage<ExtractionResultDto>>({
         method: 'POST',
         url: `${RightConsents.config.apiRoot}/records/extraction`,
-        body: config,
+        body: filter,
         options
     });
 }
 
-export function extractRecordsCsv(config: ExtractionConfigDto, options?: RCApiOptions): Observable<string> {
+export function extractRecordsCsv(filter: ExtractionFilter, options?: RCApiOptions): Observable<string> {
     return RightConsents.http<string>({
         method: 'POST',
         url: `${RightConsents.config.apiRoot}/records/extraction`,
-        body: config,
+        body: filter,
         headers: {
             Accept: 'text/csv'
         },
