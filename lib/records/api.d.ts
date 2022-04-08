@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
-import { ExtractionConfigDto, ExtractionResultDto, RecordsMap } from './interfaces';
+import { ExtractionFilter, ExtractionResultDto, RecordFilter, RecordsMap } from './interfaces';
 import { RCApiOptions } from '../http';
-export declare function listRecordsOfSubject(subject: string, options?: RCApiOptions): Observable<RecordsMap>;
-export declare function extractRecords(config: ExtractionConfigDto, options?: RCApiOptions): Observable<ExtractionResultDto[]>;
-export declare function extractRecordsCsv(config: ExtractionConfigDto, options?: RCApiOptions): Observable<string>;
+import { CollectionPage } from '../common';
+export declare function listRecords(filter: RecordFilter, options?: RCApiOptions): Observable<RecordsMap>;
+export declare function extractRecords(filter: ExtractionFilter, options?: RCApiOptions): Observable<CollectionPage<ExtractionResultDto>>;
+export declare function extractRecordsCsv(filter: ExtractionFilter, options?: RCApiOptions): Observable<string>;

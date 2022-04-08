@@ -62,23 +62,35 @@ export interface OperatorLogElement {
     value: string;
 }
 
+export enum ExtractionConfigOperator {
+    AND = 'AND',
+    OR = 'OR'
+}
+
 export interface ExtractionConfigCondition {
     key: string;
     value: string;
     regexpValue: boolean;
 }
 
-export interface ExtractionConfigDto {
-    condition: ExtractionConfigCondition;
+export interface ExtractionFilter {
+    page: number;
+    size: number;
+    operator: ExtractionConfigOperator;
+    conditions: ExtractionConfigCondition[];
+}
+
+export interface ExtractionResultRecord {
+    recordKey: string;
+    recordSerial: string;
+    recordValue: string;
 }
 
 export interface ExtractionResultDto {
     subjectId: string;
     subjectName: string;
     subjectEmail: string;
-    recordKey: string;
-    recordSerial: string;
-    recordValue: string;
+    records: ExtractionResultRecord[];
 }
 
 export interface RecordDto {
