@@ -92,6 +92,7 @@ export interface Processing extends ModelData {
         name: string;
         value: string;
     }[];
+    refusable: boolean;
 }
 export declare enum PreferenceValueType {
     TOGGLE = "TOGGLE",

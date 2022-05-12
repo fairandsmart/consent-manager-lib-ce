@@ -106,6 +106,7 @@ export interface Processing extends ModelData {
     dataController: Controller;
     dataControllerVisible: boolean;
     thirdParties: { name: string, value: string }[];
+    refusable: boolean;
 }
 
 export enum PreferenceValueType {
