@@ -32,6 +32,9 @@ export interface ConsentContext {
     /** The identifier of the profile the processing will be linked to */
     subject: string;
 
+    /** The identifier of the object the processing will be linked to */
+    object?: string;
+
     /** If the form is not in iframe mode, the user will be redirected to this callback once the process is over */
     callback?: string;
 

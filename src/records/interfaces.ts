@@ -24,10 +24,14 @@ export enum RecordStatusExplanation {
     ENTRY_DELETED = 'ENTRY_DELETED'
 }
 
+export const RECORD_IDENTIFIER_DEFAULT: string = 'undefined';
+export const RECORD_IDENTIFIER_SEPARATOR: string = '|';
+
 export interface RecordFilter {
     page?: number;
     size?: number;
     subject?: string;
+    object?: string;
     states?: RecordStates[];
     infos?: string[];
     elements?: string[];
@@ -42,6 +46,9 @@ export interface RecordFilter {
 export interface EntryRecord {
     id: string;
     key: string;
+    subject: string;
+    object?: string;
+    recordIdentifier: string;
     type: string;
     name: string;
     identifier: string;
@@ -84,6 +91,7 @@ export interface ExtractionResultRecord {
     recordKey: string;
     recordSerial: string;
     recordValue: string;
+    recordObject: string;
 }
 
 export interface ExtractionResultDto {
@@ -109,6 +117,7 @@ export interface RecordDto {
     transaction: string;
     notificationReports: NotificationReport[];
 }
+
 export interface RecordsMap {
     [key: string]: RecordDto[];
 }
