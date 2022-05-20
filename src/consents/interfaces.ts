@@ -56,8 +56,8 @@ export interface ConsentContext {
     /** Silent Consent collect disable fetching existing values for the declared subject */
     silent?: boolean;
 
-    /** Any relevant informations about the user that will be persisted in the receipt */
-    userinfos?: { [key: string]: string };
+    /** Any relevant informations about the subject that will be persisted in the receipt */
+    subjectInfos?: { [key: string]: string };
 
     /** Any other relevant informations about the context that will be persisted in the record */
     attributes?: { [key: string]: string };
