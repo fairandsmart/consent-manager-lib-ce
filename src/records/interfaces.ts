@@ -106,6 +106,7 @@ export interface RecordDto {
     infoKey?: string;
     bodyKey: string;
     subject: string;
+    object?: string;
     creationTimestamp: number;
     expirationTimestamp: number;
     type: string;
