@@ -13,7 +13,7 @@ export enum Confirmation {
 
 export const CONFIRMATION_TYPES: Confirmation[] = Object.keys(Confirmation) as Confirmation[];
 
-export enum UserInfosKeys {
+export enum SubjectInfosKeys {
     EMAIL_KEY = 'emailAddress',
     PHONE_KEY = 'phoneNumber'
 }

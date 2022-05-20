@@ -10,7 +10,7 @@ export declare enum Confirmation {
     DIGITAL_SIGNATURE = "DIGITAL_SIGNATURE"
 }
 export declare const CONFIRMATION_TYPES: Confirmation[];
-export declare enum UserInfosKeys {
+export declare enum SubjectInfosKeys {
     EMAIL_KEY = "emailAddress",
     PHONE_KEY = "phoneNumber"
 }
