@@ -20,10 +20,13 @@ export declare enum RecordStatusExplanation {
     STILL_PENDING = "STILL_PENDING",
     ENTRY_DELETED = "ENTRY_DELETED"
 }
+export declare const RECORD_IDENTIFIER_DEFAULT: string;
+export declare const RECORD_IDENTIFIER_SEPARATOR: string;
 export interface RecordFilter {
     page?: number;
     size?: number;
     subject?: string;
+    object?: string;
     states?: RecordStates[];
     infos?: string[];
     elements?: string[];
@@ -37,6 +40,9 @@ export interface RecordFilter {
 export interface EntryRecord {
     id: string;
     key: string;
+    subject: string;
+    object?: string;
+    recordIdentifier: string;
     type: string;
     name: string;
     identifier: string;
@@ -74,6 +80,7 @@ export interface ExtractionResultRecord {
     recordKey: string;
     recordSerial: string;
     recordValue: string;
+    recordObject: string;
 }
 export interface ExtractionResultDto {
     subjectId: string;
@@ -86,6 +93,7 @@ export interface RecordDto {
     infoKey?: string;
     bodyKey: string;
     subject: string;
+    object?: string;
     creationTimestamp: number;
     expirationTimestamp: number;
     type: string;

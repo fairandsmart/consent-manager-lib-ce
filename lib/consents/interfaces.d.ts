@@ -10,7 +10,7 @@ export declare enum Confirmation {
     DIGITAL_SIGNATURE = "DIGITAL_SIGNATURE"
 }
 export declare const CONFIRMATION_TYPES: Confirmation[];
-export declare enum UserInfosKeys {
+export declare enum SubjectInfosKeys {
     EMAIL_KEY = "emailAddress",
     PHONE_KEY = "phoneNumber"
 }
@@ -26,6 +26,8 @@ export declare enum ConfirmationConfigKeys {
 export interface ConsentContext {
     /** The identifier of the profile the processing will be linked to */
     subject: string;
+    /** The identifier of the object the processing will be linked to */
+    object?: string;
     /** If the form is not in iframe mode, the user will be redirected to this callback once the process is over */
     callback?: string;
     /** If the IFrame mode is set, set the allowed origin for the parent window domain */
