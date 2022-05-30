@@ -7,6 +7,7 @@ export class ConsentHelper {
     return {
       language: lang,
       subject: record.subject,
+      object: record.object,
       origin: ConsentOrigin.USER,
       layoutData: {
         info: '',
