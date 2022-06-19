@@ -171,6 +171,7 @@ export interface FormLayout extends ModelData {
     type: 'layout';
     info: string;
     elements: string[];
+    peerElements: PeerElements[];
     orientation?: FormLayoutOrientation;
     existingElementsVisible?: boolean;
     validityVisible?: boolean;
@@ -181,6 +182,13 @@ export interface FormLayout extends ModelData {
     cancelText?: string;
     cancelVisible?: boolean;
     footerOnTop?: boolean;
+}
+
+export interface PeerElements {
+    peer: string;
+    info: string;
+    elements: string[];
+    notification: string;
 }
 
 export enum FormLayoutOrientation {
