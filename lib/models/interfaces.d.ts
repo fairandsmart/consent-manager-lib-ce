@@ -144,10 +144,17 @@ export interface Email extends ModelData {
     footer: string;
     signature: string;
 }
+export interface PeerElements {
+    peer: string;
+    info: string;
+    elements: string[];
+    notification: string;
+}
 export interface FormLayout extends ModelData {
     type: 'layout';
     info: string;
     elements: string[];
+    peerElements?: PeerElements[];
     orientation?: FormLayoutOrientation;
     existingElementsVisible?: boolean;
     validityVisible?: boolean;
@@ -158,6 +165,12 @@ export interface FormLayout extends ModelData {
     cancelText?: string;
     cancelVisible?: boolean;
     footerOnTop?: boolean;
+}
+export interface PeerElements {
+    peer: string;
+    info: string;
+    elements: string[];
+    notification: string;
 }
 export declare enum FormLayoutOrientation {
     HORIZONTAL = "HORIZONTAL",
@@ -188,6 +201,7 @@ export interface ModelFilter {
     order?: string;
     direction?: SortDirection;
     tags?: string[];
+    shared?: boolean;
 }
 export interface PreviewDto {
     language: string;
@@ -236,6 +250,7 @@ export interface ModelEntryDtoPartial {
     defaultLanguage: string;
     availableLanguages: string[];
     tags?: string[];
+    shared: boolean;
 }
 export interface ModelEntryDto extends ModelEntryDtoPartial {
     versions: ModelVersionDtoLight[];

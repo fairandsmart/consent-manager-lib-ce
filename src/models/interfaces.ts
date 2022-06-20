@@ -167,11 +167,18 @@ export interface Email extends ModelData {
     signature: string;
 }
 
+export interface PeerElements {
+    peer: string;
+    info: string;
+    elements: string[];
+    notification: string;
+}
+
 export interface FormLayout extends ModelData {
     type: 'layout';
     info: string;
     elements: string[];
-    peerElements: PeerElements[];
+    peerElements?: PeerElements[];
     orientation?: FormLayoutOrientation;
     existingElementsVisible?: boolean;
     validityVisible?: boolean;
@@ -227,6 +234,7 @@ export interface ModelFilter {
     order?: string;
     direction?: SortDirection;
     tags?: string[];
+    shared?: boolean;
 }
 
 export interface PreviewDto {
@@ -279,6 +287,7 @@ export interface ModelEntryDtoPartial {
     defaultLanguage: string;
     availableLanguages: string[];
     tags?: string[];
+    shared: boolean;
 }
 
 export interface ModelEntryDto extends ModelEntryDtoPartial {

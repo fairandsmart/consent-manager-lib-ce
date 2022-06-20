@@ -7,6 +7,7 @@ export declare function listEntries(filter: ModelFilter, options?: RCApiOptions)
 export declare function createEntry(dto: CreateModelDto, options?: RCApiOptions): Observable<ModelEntryDto>;
 export declare function getEntry(id: string, options?: RCApiOptions): Observable<ModelEntryDto>;
 export declare function updateEntry(id: string, dto: UpdateModelDto, options?: RCApiOptions): Observable<ModelEntryDto>;
+export declare function updateEntryVisibility(id: string, dto: UpdateModelDto, options?: RCApiOptions): Observable<ModelEntryDto>;
 export declare function deleteEntry(id: string, options?: RCApiOptions): Observable<void>;
 export declare function setDefaultInfoModel(user: string, operator: string, form: string, options?: RCApiOptions): Observable<void>;
 export declare function listVersions<T extends ModelData = ModelData>(id: string, options?: RCApiOptions): Observable<ModelVersionDtoLight<T>[]>;
