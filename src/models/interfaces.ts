@@ -172,6 +172,7 @@ export interface PeerElements {
     info: string;
     elements: string[];
     notification: string;
+    connectionId?: string;
 }
 
 export interface FormLayout extends ModelData {
