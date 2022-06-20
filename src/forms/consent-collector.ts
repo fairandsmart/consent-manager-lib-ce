@@ -1,9 +1,14 @@
 import { ConsentCollectorCallback, ConsentCollectorConfig } from './interfaces';
 import { RightConsents } from '../api';
 import { iframeResizer } from 'iframe-resizer';
+import { ConsentContext } from '../consents';
 
 export class ConsentCollector {
     constructor(private config: ConsentCollectorConfig) {}
+
+    getContext(): ConsentContext {
+        return this.config.consentContext;
+    }
 
     overrideSubject(newSubject: string) {
         this.config.consentContext.subject = newSubject;
