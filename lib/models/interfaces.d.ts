@@ -167,12 +167,6 @@ export interface FormLayout extends ModelData {
     cancelVisible?: boolean;
     footerOnTop?: boolean;
 }
-export interface PeerElements {
-    peer: string;
-    info: string;
-    elements: string[];
-    notification: string;
-}
 export declare enum FormLayoutOrientation {
     HORIZONTAL = "HORIZONTAL",
     VERTICAL = "VERTICAL"
