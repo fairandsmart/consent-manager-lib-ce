@@ -1,4 +1,8 @@
-import { RecordDto } from '../records';
+export interface Instance {
+    id: string;
+    name: string;
+    language: string;
+}
 
 export interface UserDto {
     username: string;

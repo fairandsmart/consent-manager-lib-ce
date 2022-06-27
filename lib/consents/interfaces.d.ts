@@ -55,6 +55,8 @@ export interface ConsentContext {
     };
     /** (readonly) A transaction identifier for that consent.  */
     transaction?: string;
+    /** A transaction identifier for the leading transaction.  */
+    leadingTransaction?: TransactionIdentifier;
     /** The identifier of the user who used the form */
     author?: string;
     /** The FormLayout Data to use ; if layout key is provided, layoutData will be ignored.*/
@@ -79,4 +81,8 @@ export interface ConsentTransaction {
     claims: {
         [key: string]: string;
     };
+}
+export interface TransactionIdentifier {
+    location: string;
+    id: string;
 }

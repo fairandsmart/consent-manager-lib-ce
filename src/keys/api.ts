@@ -11,11 +11,11 @@ export function listKeys(options?: RCApiOptions): Observable<Key[]> {
     });
 }
 
-export function createKey(name: string, options?: RCApiOptions): Observable<Key> {
+export function createKey(key: Key, options?: RCApiOptions): Observable<Key> {
     return RightConsents.http<Key>({
         method: 'POST',
         url: `${RightConsents.config.apiRoot}/keys`,
-        body: { name },
+        body: key,
         options
     });
 }

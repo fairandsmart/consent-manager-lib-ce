@@ -1,3 +1,8 @@
+export enum KeyScope {
+    OWNER = 'OWNER',
+    PEER = 'PEER'
+}
+
 /**
  * An API Key, used for identification. The content of the key is only visible right after generating it.
  */
@@ -12,4 +17,6 @@ export interface Key {
     creationDate?: number;
     /** The last time the key was used */
     lastAccessDate?: number;
+    /** The key scope **/
+    scope: KeyScope;
 }

@@ -53,6 +53,15 @@ export function updateEntry(id: string, dto: UpdateModelDto, options?: RCApiOpti
   });
 }
 
+export function updateEntryVisibility(id: string, dto: UpdateModelDto, options?: RCApiOptions): Observable<ModelEntryDto> {
+  return RightConsents.http<ModelEntryDto>({
+    method: 'PUT',
+    url: `${RightConsents.config.apiRoot}/models/${id}/visibility`,
+    body: dto,
+    options
+  });
+}
+
 export function deleteEntry(id: string, options?: RCApiOptions): Observable<void> {
   return RightConsents.http<void>({
     method: 'DELETE',

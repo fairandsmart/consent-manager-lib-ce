@@ -68,6 +68,9 @@ export interface ConsentContext {
     /** (readonly) A transaction identifier for that consent.  */
     transaction?: string;
 
+    /** A transaction identifier for the leading transaction.  */
+    leadingTransaction?: TransactionIdentifier;
+
     /** The identifier of the user who used the form */
     author?: string;
 
@@ -95,4 +98,9 @@ export interface ConsentTransaction {
     subject: string;
     transaction: string;
     claims: {[key: string]: string};
+}
+
+export interface TransactionIdentifier {
+    location: string;
+    id: string;
 }
