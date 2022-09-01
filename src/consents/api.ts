@@ -8,7 +8,6 @@ export function createTransactionJson(ctx: ConsentContext, lang: string, options
     method: 'POST',
     url: `${RightConsents.config.apiRoot}/consents`,
     body: ctx,
-    responseType: 'text',
     resolveHeaders: true,
     headers: {
       'Content-Type': 'application/json',
