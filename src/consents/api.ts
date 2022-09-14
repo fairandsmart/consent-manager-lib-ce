@@ -1,10 +1,10 @@
 import { RightConsents } from '../api';
 import { Observable } from 'rxjs';
-import { ConsentContext } from './interfaces';
+import { ConsentContext, ConsentTransaction } from './interfaces';
 import { RCApiOptions } from '../http';
 
-export function createTransactionJson(ctx: ConsentContext, lang: string, options?: RCApiOptions): Observable<string> {
-  return RightConsents.http<string>({
+export function createTransactionJson(ctx: ConsentContext, lang: string, options?: RCApiOptions): Observable<ConsentTransaction> {
+  return RightConsents.http<ConsentTransaction>({
     method: 'POST',
     url: `${RightConsents.config.apiRoot}/consents`,
     body: ctx,
@@ -17,10 +17,10 @@ export function createTransactionJson(ctx: ConsentContext, lang: string, options
   });
 }
 
-export function getTransactionJson(transactionId: string, options?: RCApiOptions): Observable<string> {
-  return RightConsents.http<string>({
+export function getTransactionJson(txid: string, options?: RCApiOptions): Observable<ConsentTransaction> {
+  return RightConsents.http<ConsentTransaction>({
     method: 'GET',
-    url: `${RightConsents.config.apiRoot}/consents/${transactionId}`,
+    url: `${RightConsents.config.apiRoot}/consents/${txid}`,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -28,14 +28,14 @@ export function getTransactionJson(transactionId: string, options?: RCApiOptions
   });
 }
 
-export function postSubmissionValuesHtml(txid: string, values: {[key: string]: string}, options?: RCApiOptions): Observable<string> {
+export function postSubmissionValuesJson(txid: string, values: {[key: string]: string[]}, options?: RCApiOptions): Observable<string> {
   return RightConsents.http<string>({
     method: 'POST',
     url: `${RightConsents.config.apiRoot}/consents/${txid}/submit`,
-    body: Object.keys(values).map((key) => `${key}=${encodeURIComponent(values[key])}`).join('&'),
+    body: values,
     responseType: 'text',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      'Content-Type': 'application/json',
     },
     options
   });

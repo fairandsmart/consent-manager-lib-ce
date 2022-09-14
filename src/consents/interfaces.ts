@@ -93,11 +93,18 @@ export interface ConsentContext {
     notification?: string;
 }
 
-/** Used to generate a Receipt from a transaction id */
 export interface ConsentTransaction {
+    id: string;
     subject: string;
-    transaction: string;
-    claims: {[key: string]: string};
+    state: string;
+    leader: string;
+    followers: string[];
+    context: ConsentContext;
+    token: string;
+    task: string;
+    receipt: string;
+    breed: string;
+    cpp: string;
 }
 
 export interface TransactionIdentifier {
