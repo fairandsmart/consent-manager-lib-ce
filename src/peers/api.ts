@@ -1,6 +1,6 @@
 import { RCApiOptions } from '../http';
 import { Observable } from 'rxjs';
-import { Peer } from './interfaces';
+import { CreatePeerDto, Peer } from './interfaces';
 import { RightConsents } from '../api';
 
 export function listPeers(options?: RCApiOptions): Observable<Peer[]> {
@@ -11,11 +11,11 @@ export function listPeers(options?: RCApiOptions): Observable<Peer[]> {
     });
 }
 
-export function createPeer(peer: Peer, options?: RCApiOptions): Observable<Peer> {
+export function createPeer(peerDto: CreatePeerDto, options?: RCApiOptions): Observable<Peer> {
     return RightConsents.http<Peer>({
         method: 'POST',
         url: `${RightConsents.config.apiRoot}/peers`,
-        body: peer,
+        body: peerDto,
         options
     });
 }
