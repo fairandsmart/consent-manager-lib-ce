@@ -23,8 +23,8 @@
   "devDependencies": {},
   "dependencies": {},
   "peerDependencies": {
-    "rxjs": "^6.6.3",
-    "jsonpath": "^1.1.1"
+    "rxjs": "^6 || ^7",
+    "jsonpath": "^1"
   },
   "main": "./index.js",
   "types": "./index.d.ts",

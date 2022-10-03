@@ -46,7 +46,7 @@ export class ConsentCollector {
     private getTokenFromBroker() {
         return RightConsents.http<{ token: string, location: string }>({
             method: 'POST',
-            url: this.config.tokenBrokerEndpoint,
+            url: this.config.tokenBrokerEndpoint + '?lang=' + this.config.consentContext.language,
             body: this.config.consentContext,
             options: {
                 noAuth: true
