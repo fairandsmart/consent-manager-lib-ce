@@ -248,6 +248,7 @@ export interface CreateModelDto {
 export interface UpdateModelDto {
     name: string;
     description: string;
+    shared?: boolean;
 }
 
 export interface ModelVersionDtoLight<T extends ModelData = ModelData> {
