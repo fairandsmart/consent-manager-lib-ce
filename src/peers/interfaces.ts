@@ -1,5 +1,4 @@
 export interface CreatePeerDto {
-    name: string;
     url: string;
     apiKey: string;
     withCounterPart: boolean;

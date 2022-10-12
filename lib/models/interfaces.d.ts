@@ -196,7 +196,7 @@ export interface ModelFilter {
     order?: string;
     direction?: SortDirection;
     tags?: string[];
-    shared?: boolean;
+    shared?: boolean[];
 }
 export interface PreviewDto {
     language: string;
