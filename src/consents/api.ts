@@ -49,6 +49,7 @@ export function getSubmitFormPreview(ctx: ConsentContext, lang: string, options?
     responseType: 'text',
     headers: {
       'Content-Type': 'application/json',
+      'Accept': 'text/html',
       'Accept-Language': lang,
     },
     options
