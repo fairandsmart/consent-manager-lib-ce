@@ -12,4 +12,4 @@ export * as SystemResource from './system';
 export * as TokensResource from './tokens';
 export * as UsersResource from './users';
 export { ConsentCollector } from './forms';
-export declare const version = "v1.3.3";
+export declare const version = "v1.4.4 (ce)";

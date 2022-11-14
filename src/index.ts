@@ -15,5 +15,5 @@ export * as UsersResource from './users';
 
 export { ConsentCollector } from './forms';
 
-export const version = "v1.3.3";
+export const version = "v1.4.4 (ce)";
 
