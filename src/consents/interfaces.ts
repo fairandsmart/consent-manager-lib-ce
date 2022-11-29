@@ -1,4 +1,4 @@
-import { ConsentOrigin, FormLayout } from '../models';
+import { ConsentOrigin, FormLayout, PeerContext } from '../models';
 
 export enum Confirmation {
     NONE = 'NONE',
@@ -89,8 +89,11 @@ export interface ConsentContext {
     /** The reference to the 'theme' that will apply */
     theme?: string;
 
-    /** The reference to the 'email' mode for notification */
+    /** The reference to the 'email' model for notification (this overrides the layout notification model) */
     notification?: string;
+
+    /** The specific contexts parameters for peer transactions */
+    peerContexts?: PeerContext[];
 }
 
 export interface ConsentTransaction {

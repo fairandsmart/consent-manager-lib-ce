@@ -169,16 +169,22 @@ export interface Email extends ModelData {
 
 export interface PeerElements {
     peer: string;
-    info: string;
+    info?: string;
     elements: string[];
-    notification: string;
+    defaultNotification?: string;
     connectionId?: string;
+}
+
+export interface PeerContext {
+    peer: string;
+    notification: string;
 }
 
 export interface FormLayout extends ModelData {
     type: 'layout';
     info: string;
     elements: string[];
+    defaultNotification?: string;
     peerElements?: PeerElements[];
     orientation?: FormLayoutOrientation;
     existingElementsVisible?: boolean;
