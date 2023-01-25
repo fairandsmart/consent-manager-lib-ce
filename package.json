@@ -9,7 +9,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "build.sh",
+    "build": "./build.sh",
     "pack": "npm run build && cd lib && npm pack"
   },
   "keywords": [],
