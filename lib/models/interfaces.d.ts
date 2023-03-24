@@ -154,6 +154,7 @@ export interface PeerElements {
 export interface PeerContext {
     peer: string;
     notification: string;
+    theme: string;
 }
 export interface FormLayout extends ModelData {
     type: 'layout';
