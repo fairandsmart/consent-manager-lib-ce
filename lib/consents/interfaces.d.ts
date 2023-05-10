@@ -73,6 +73,8 @@ export interface ConsentContext {
     theme?: string;
     /** The reference to the 'email' model for notification (this overrides the layout notification model) */
     notification?: string;
+    /** Whether to send an invitation email upon transaction creation */
+    sendInvitation?: boolean;
     /** The specific contexts parameters for peer transactions */
     peerContexts?: PeerContext[];
 }
