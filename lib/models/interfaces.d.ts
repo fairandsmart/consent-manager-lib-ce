@@ -144,6 +144,11 @@ export interface Email extends ModelData {
     footer: string;
     signature: string;
 }
+export interface Notice extends ModelData {
+    type: 'notice';
+    description: string;
+    associatedProcessing: string[];
+}
 export interface PeerElements {
     peer: string;
     info?: string;
@@ -184,7 +189,7 @@ export declare enum ConsentOrigin {
     USER = "USER"
 }
 export declare const CONSENT_ORIGIN: ConsentOrigin[];
-export declare type ModelDataType = 'information' | 'processing' | 'conditions' | 'theme' | 'email' | 'preference' | 'layout';
+export declare type ModelDataType = 'information' | 'processing' | 'conditions' | 'theme' | 'email' | 'preference' | 'layout' | 'notice';
 export declare enum PreviewType {
     FORM = "FORM",
     RECEIPT = "RECEIPT",
