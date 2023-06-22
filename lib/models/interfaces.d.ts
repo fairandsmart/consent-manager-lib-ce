@@ -18,19 +18,25 @@ export declare enum ModelVersionType {
     MAJOR = "MAJOR",
     MINOR = "MINOR"
 }
+export declare enum Visibility {
+    FORM_AND_RECEIPT = "FORM_AND_RECEIPT",
+    RECEIPT_ONLY = "RECEIPT_ONLY",
+    HIDDEN = "HIDDEN"
+}
+export declare const VISIBILITIES: Visibility[];
 export interface Information extends ModelData {
     type: 'information';
     title: string;
     header: string;
     footer: string;
     jurisdiction: string;
-    jurisdictionVisible: boolean;
+    jurisdictionVisibility: Visibility;
     dataController: Controller;
-    dataControllerVisible: boolean;
+    dataControllerVisibility: Visibility;
     scope: string;
-    scopeVisible: boolean;
+    scopeVisibility: Visibility;
     shortNoticeLink: string;
-    shortNoticeLinkVisible: boolean;
+    shortNoticeLinkVisibility: Visibility;
     privacyPolicyUrl: string;
     customPrivacyPolicyText: string;
 }
@@ -79,19 +85,27 @@ export interface RetentionInfo {
 export interface Processing extends ModelData {
     type: 'processing';
     title: string;
-    legalBasis: ProcessingLegalBasis;
+    titleVisibility: Visibility;
+    legalBases: ProcessingLegalBasis[];
+    legalBasesVisibility: Visibility;
     data: string;
+    dataVisibility: Visibility;
     retention: RetentionInfo;
+    retentionVisibility: Visibility;
     usage: string;
+    usageVisibility: Visibility;
     purposes: ProcessingPurpose[];
+    purposesVisibility: Visibility;
     containsSensitiveData: boolean;
     containsMedicalData: boolean;
+    dataSensitivityVisibility: Visibility;
     dataController: Controller;
-    dataControllerVisible: boolean;
+    dataControllerVisibility: Visibility;
     thirdParties: {
         name: string;
         value: string;
     }[];
+    thirdPartiesVisibility: Visibility;
     refusable: boolean;
 }
 export declare enum PreferenceValueType {
