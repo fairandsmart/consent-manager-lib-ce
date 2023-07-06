@@ -1,4 +1,4 @@
-interface HintEntry {
+export interface HintEntry {
     value: string;
     context: { [key: string]: string; };
     position: { [key: string]: string; };

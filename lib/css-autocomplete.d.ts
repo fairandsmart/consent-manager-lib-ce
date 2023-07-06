@@ -1,4 +1,4 @@
-interface HintEntry {
+export interface HintEntry {
     value: string;
     context: {
         [key: string]: string;
@@ -11,4 +11,3 @@ interface HintEntry {
     };
 }
 export declare const CSS_HINTS: HintEntry[];
-export {};
