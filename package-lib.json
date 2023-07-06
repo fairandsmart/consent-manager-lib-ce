@@ -1,6 +1,6 @@
 {
   "name": "@fairandsmart/consents-ce",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "TypeScript mappings for the Fair&Smart's Right Consents Community features",
   "sideEffects": false,
   "scripts": {},
@@ -31,12 +31,14 @@
   "module": "./index.js",
   "exports": {
     ".": "./index.js",
+    "./css-autocomplete": "./css-autocomplete.js",
     "./api": "./api.js",
     "./http": "./http.js",
     "./common": "./common.js",
     "./consents":  "./consents/index.js",
     "./keys": "./keys/index.js",
     "./models": "./models/index.js",
+    "./peers": "./peers/index.js",
     "./receipts": "./receipts/index.js",
     "./records": "./records/index.js",
     "./statistics": "./statistics/index.js",
