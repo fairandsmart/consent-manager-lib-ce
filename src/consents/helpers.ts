@@ -11,7 +11,7 @@ export class ConsentHelper {
       origin: ConsentOrigin.USER,
       layoutData: {
         info: '',
-        elements: [entry.key!],
+        blocs: [{parent: {location: '', key: entry.key!}}],
         type: 'layout',
       }
     }
