@@ -178,27 +178,27 @@ export interface PeerContext {
 export interface FormLayout extends ModelData {
     type: 'layout';
     info: string;
-    blocs: FormBloc[];
+    blocs: FormLayoutBloc[];
     hiddenBlocs?: string[];
     defaultNotification?: string;
     orientation?: FormLayoutOrientation;
-    existingElementsVisible?: boolean;
-    validityVisible?: boolean;
-    includeIFrameResizer?: boolean;
     blocDetailText?: string;
-    acceptAllVisible?: boolean;
     acceptAllText?: string;
     submitText?: string;
     cancelText?: string;
+    existingElementsVisible?: boolean;
+    validityVisible?: boolean;
+    includeIFrameResizer?: boolean;
+    acceptAllVisible?: boolean;
     cancelVisible?: boolean;
     footerOnTop?: boolean;
 }
-export interface FormBloc {
-    parent: ElementIdentifier;
-    children?: ElementIdentifier[];
+export interface FormLayoutBloc {
+    parent: FormLayoutElement;
+    children?: FormLayoutElement[];
 }
-export interface ElementIdentifier {
-    location: string;
+export interface FormLayoutElement {
+    location?: string;
     key: string;
 }
 export declare enum FormLayoutOrientation {
