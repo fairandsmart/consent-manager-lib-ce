@@ -163,18 +163,6 @@ export interface Notice extends ModelData {
     description: string;
     associatedProcessing: string[];
 }
-export interface PeerElements {
-    peer: string;
-    info?: string;
-    elements: string[];
-    defaultNotification?: string;
-    connectionId?: string;
-}
-export interface PeerContext {
-    peer: string;
-    notification: string;
-    theme: string;
-}
 export interface FormLayout extends ModelData {
     type: 'layout';
     info: string;
