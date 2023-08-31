@@ -1,4 +1,4 @@
-import { ConsentOrigin, FormLayout, PeerContext } from '../models';
+import { ConsentOrigin, FormLayout } from '../models';
 export declare enum Confirmation {
     NONE = "NONE",
     FORM_CODE = "FORM_CODE",
@@ -75,8 +75,6 @@ export interface ConsentContext {
     notification?: string;
     /** Whether to send an invitation email upon transaction creation */
     sendInvitation?: boolean;
-    /** The specific contexts parameters for peer transactions */
-    peerContexts?: PeerContext[];
 }
 export interface ConsentTransaction {
     id: string;

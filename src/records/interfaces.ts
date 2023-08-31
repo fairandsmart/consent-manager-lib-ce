@@ -1,4 +1,5 @@
 import { SortDirection } from '../common';
+import { ModelDataType } from '../models';
 
 export enum RecordStates {
     PENDING = 'PENDING',
@@ -75,6 +76,7 @@ export enum ExtractionConfigOperator {
 }
 
 export interface ExtractionConfigCondition {
+    type: ModelDataType;
     key: string;
     value: string;
     regexpValue: boolean;
