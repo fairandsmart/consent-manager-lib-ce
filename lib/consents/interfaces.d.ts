@@ -7,7 +7,8 @@ export declare enum Confirmation {
     SIGNATURE = "SIGNATURE",
     AUDIO_RECORD = "AUDIO_RECORD",
     VIDEO_RECORD = "VIDEO_RECORD",
-    DIGITAL_SIGNATURE = "DIGITAL_SIGNATURE"
+    DIGITAL_SIGNATURE = "DIGITAL_SIGNATURE",
+    MAGIC_LINK = "MAGIC_LINK"
 }
 export declare const CONFIRMATION_TYPES: Confirmation[];
 export declare enum SubjectInfosKeys {

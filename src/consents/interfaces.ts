@@ -8,7 +8,8 @@ export enum Confirmation {
     SIGNATURE = 'SIGNATURE',
     AUDIO_RECORD = 'AUDIO_RECORD',
     VIDEO_RECORD = 'VIDEO_RECORD',
-    DIGITAL_SIGNATURE = 'DIGITAL_SIGNATURE'
+    DIGITAL_SIGNATURE = 'DIGITAL_SIGNATURE',
+    MAGIC_LINK = 'MAGIC_LINK'
 }
 
 export const CONFIRMATION_TYPES: Confirmation[] = Object.keys(Confirmation) as Confirmation[];

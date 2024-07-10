@@ -2,6 +2,11 @@
 
 This project implements TypeScript definitions and API helpers for the [Fair&Smart Right Consents API](https://cmback.dev.env.fairandsmart.tech/swagger-ui/). It's meant for use in [Right Consents Front-end](https://github.com/fairandsmart/consent-manager-lib-ce), but should be general enough to use in any project. The code is maintained and based on the [Right Consents Back-end](https://github.com/fairandsmart/consent-manager-back) API resources and models, to be as close as possible to the true representation of the resources.
 
+# NPM/Node version
+
+Known to work using node v14.21.3 (npm v6.14.18).
+Use NVM to force version if needed.
+
 # Install
 
 ```
