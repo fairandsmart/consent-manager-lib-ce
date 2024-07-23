@@ -3,9 +3,10 @@ export * from './common';
 export { RightConsents } from './api';
 
 export * as ConsentsResource from './consents';
-export * as ModelsResource from './models';
+export * as FormResource from './forms';
 export * as KeysResource from './keys';
-export * as ReceiptsResource from './receipts';
+export * as ModelsResource from './models';
+export * as PeerResources from './peers';
 export * as RecordsResource from './records';
 export * as StatsResource from './statistics';
 export * as SubjectsResource from './subjects';
