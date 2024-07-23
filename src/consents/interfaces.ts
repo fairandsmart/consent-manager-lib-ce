@@ -95,6 +95,9 @@ export interface ConsentContext {
 
     /** Whether to send an invitation email upon transaction creation */
     sendInvitation?: boolean;
+
+    /** used to tell where consent can be managed if needed */
+    managementUrl?: string;
 }
 
 export interface ConsentTransaction {
