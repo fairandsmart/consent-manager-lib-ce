@@ -4,7 +4,7 @@ import { WebhookDto } from './interfaces';
 import { RCApiOptions } from '../http';
 
 export function listWebhooks(options?: RCApiOptions): Observable<WebhookDto[]> {
-    return RightConsents.http<WebhookDto>({
+    return RightConsents.http<WebhookDto[]>({
         method: 'GET',
         url: `${RightConsents.config.apiRoot}/webhooks`,
         options
