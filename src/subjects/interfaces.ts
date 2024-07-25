@@ -4,4 +4,6 @@ export interface SubjectDto {
     emailAddress: string;
     creationTimestamp: number;
     defaultLanguage: string;
+    supersededBy: string;
+    superseded: string[];
 }
