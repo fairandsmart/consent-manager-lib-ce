@@ -13,4 +13,4 @@ export * as SystemResource from './system';
 export * as TokensResource from './tokens';
 export * as UsersResource from './users';
 export { ConsentCollector } from './forms';
-export declare const version = "v2.0.8 (ce)";
+export declare const version = "v2.0.9 (ce)";
