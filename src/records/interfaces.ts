@@ -37,8 +37,13 @@ export interface RecordFilter {
     infos?: string[];
     elements?: string[];
     origin?: string;
-    after?: number;
-    before?: number;
+    after?: number; // deprecated, please use creaafter instead
+    before?: number; // deprecated, please use creabefore instead
+    creaafter?: number;
+    creabefore?: number;
+    expafter?: number;
+    expbefore?: number;
+    bodykey?: string;
     value?: string;
     order?: string;
     direction?: SortDirection;
