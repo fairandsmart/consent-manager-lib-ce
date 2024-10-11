@@ -34,6 +34,11 @@ export interface RecordFilter {
     origin?: string;
     after?: number;
     before?: number;
+    creaafter?: number;
+    creabefore?: number;
+    expafter?: number;
+    expbefore?: number;
+    bodykey?: string;
     value?: string;
     order?: string;
     direction?: SortDirection;
