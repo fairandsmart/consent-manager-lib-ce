@@ -46,3 +46,28 @@ export function listSubjectRecords(subject: string, options?: RCApiOptions): Obs
         options
     });
 }
+
+export function getAliases(subject: string, options?: RCApiOptions): Observable<SubjectDto[]> {
+    return RightConsents.http<SubjectDto[]>({
+        method: 'GET',
+        url: `${RightConsents.config.apiRoot}/subjects/${subject}/aliases`,
+        options
+    });
+}
+
+export function setAlias(subject: string, supersede: string, options?: RCApiOptions): Observable<SubjectDto> {
+    return RightConsents.http<SubjectDto>({
+        method: 'PUT',
+        url: `${RightConsents.config.apiRoot}/subjects/${subject}/aliases`,
+        params: { supersede} ,
+        options
+    });
+}
+
+export function removeAlias(alias: string, options?: RCApiOptions): Observable<SubjectDto> {
+    return RightConsents.http<SubjectDto>({
+        method: 'DELETE',
+        url: `${RightConsents.config.apiRoot}/subjects/${alias}/aliases`,
+        options
+    });
+}
