@@ -70,6 +70,14 @@ export function deleteEntry(id: string, options?: RCApiOptions): Observable<void
   });
 }
 
+export function getEntryByRKey(recordKey: string, options: RCApiOptions = { noAuth: true }): Observable<ModelEntryDto> {
+  return RightConsents.http<ModelEntryDto>({
+    method: 'GET',
+    url: `${RightConsents.config.apiRoot}/models/serials${recordKey}`,
+    options
+  });
+}
+
 export function setDefaultInfoModel(user: string, operator: string, form: string, options?: RCApiOptions): Observable<void> {
   return RightConsents.http<void>({
     method: 'POST',
