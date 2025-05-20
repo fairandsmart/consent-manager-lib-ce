@@ -146,6 +146,13 @@ export interface Preference extends ModelData {
     optional: boolean;
 }
 
+export interface Objection extends ModelData {
+    type: 'objection';
+    title: string;
+    description: string;
+    objectByDefault: boolean;
+}
+
 export interface Conditions extends ModelData {
     type: 'conditions';
     title: string;
@@ -232,7 +239,7 @@ export enum ConsentOrigin {
 
 export const CONSENT_ORIGIN: ConsentOrigin[] = Object.keys(ConsentOrigin) as ConsentOrigin[];
 
-export type ModelDataType = 'information' | 'processing' | 'conditions' | 'theme' | 'email' | 'preference' | 'layout' | 'notice';
+export type ModelDataType = 'information' | 'processing' | 'conditions' | 'theme' | 'email' | 'preference' | 'layout' | 'notice' | 'objection';
 
 export enum PreviewType {
     FORM = 'FORM',
