@@ -153,6 +153,12 @@ export interface Objection extends ModelData {
     objectByDefault: boolean;
 }
 
+export interface Splitter extends ModelData {
+    type: 'splitter';
+    title: string;
+    description: string;
+}
+
 export interface Conditions extends ModelData {
     type: 'conditions';
     title: string;
@@ -239,7 +245,7 @@ export enum ConsentOrigin {
 
 export const CONSENT_ORIGIN: ConsentOrigin[] = Object.keys(ConsentOrigin) as ConsentOrigin[];
 
-export type ModelDataType = 'information' | 'processing' | 'conditions' | 'theme' | 'email' | 'preference' | 'layout' | 'notice' | 'objection';
+export type ModelDataType = 'information' | 'processing' | 'conditions' | 'theme' | 'email' | 'preference' | 'layout' | 'notice' | 'objection' | 'splitter';
 
 export enum PreviewType {
     FORM = 'FORM',
