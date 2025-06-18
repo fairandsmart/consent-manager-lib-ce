@@ -1,6 +1,6 @@
 {
   "name": "@fairandsmart/consents-ce",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "description": "TypeScript mappings for the Fair&Smart's Right Consents Community features",
   "sideEffects": false,
   "scripts": {},
