@@ -193,6 +193,7 @@ export interface Email extends ModelData {
     buttonLabel: string;
     footer: string;
     signature: string;
+    senderName?: string;
 }
 
 export interface Notice extends ModelData {
