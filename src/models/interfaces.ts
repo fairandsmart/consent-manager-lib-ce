@@ -220,6 +220,7 @@ export interface FormLayout extends ModelData {
     cancelVisible?: boolean;
     footerOnTop?: boolean;
     iFrameResizerVersion?: string;
+    theme?: string;
 }
 
 export interface FormLayoutBloc {
