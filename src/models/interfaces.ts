@@ -56,6 +56,12 @@ export enum DefaultInfoTag {
 
 export const DEFAULT_INFO_TAGS = Object.keys(DefaultInfoTag);
 
+export enum DefaultThemeTag {
+    DEFAULT_THEME = "DEFAULT_THEME"
+}
+
+export const DEFAULT_THEME_TAGS = Object.keys(DefaultThemeTag);
+
 export interface Controller {
     company: string;
     info: string;
