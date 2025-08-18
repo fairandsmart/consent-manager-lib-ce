@@ -61,6 +61,11 @@ export enum DefaultThemeTag {
 }
 
 export const DEFAULT_THEME_TAGS = Object.keys(DefaultThemeTag);
+export enum DefaultEmailTag {
+    DEFAULT_EMAIL = "DEFAULT_EMAIL"
+}
+
+export const DEFAULT_EMAIL_TAGS = Object.keys(DefaultEmailTag);
 
 export interface Controller {
     company: string;
