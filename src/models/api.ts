@@ -96,6 +96,15 @@ export function setDefaultThemeModel(theme: string, options?: RCApiOptions): Obs
   });
 }
 
+export function setDefaultEmailModel(emailKey: string, options?: RCApiOptions): Observable<void> {
+  return RightConsents.http<void>({
+    method: 'POST',
+    url: `${RightConsents.config.apiRoot}/models/defaultemail`,
+    params: { email: emailKey },
+    options
+  });
+}
+
 export function listVersions<T extends ModelData = ModelData>(id: string, options: RCApiOptions = { noAuth: true }): Observable<ModelVersionDtoLight<T>[]> {
   return RightConsents.http<ModelVersionDtoLight[]>({
     method: 'GET',
