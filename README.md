@@ -9,11 +9,13 @@ Before mergin into master, please ensure you:
 * run `npm run pack`
 * embed in your MR what has been changed under lib/, _bundles/, docs/
 
+v3.x is targetted for node 18.
+v2.x is targetted for node 14 and is deprecated. 
 
 # NPM/Node version
 
-Known to work using node v14.21.3 (npm v6.14.18).
-Use NVM to force version if needed.
+* v3.x+: known to work using node v18.20.8 (npm v10.8.2). Use NVM to force version if needed.
+* v2.x-: known to work using node v14.21.3 (npm v6.14.18). Use NVM to force version if needed.
 
 # Install
 
