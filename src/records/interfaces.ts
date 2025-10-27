@@ -83,6 +83,7 @@ export enum ExtractionConfigOperator {
 export interface ExtractionConfigCondition {
     type: ModelDataType;
     key: string;
+    serial: string;
     value: string;
     regexpValue: boolean;
 }
