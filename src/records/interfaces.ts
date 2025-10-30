@@ -68,6 +68,14 @@ export interface EntryRecord {
     versionIndex: number;
 }
 
+export interface EntryRecordFilter {
+    subject: string;
+    type: string;
+    page?: number;
+    size?: number;
+    recordsOnly?: boolean;
+}
+
 export interface OperatorLogElement {
     type: string;
     key: string;

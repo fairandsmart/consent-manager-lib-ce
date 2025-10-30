@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { RightConsents } from '../api';
-import { ExtractionFilter, ExtractionResultDto, RecordFilter, RecordsMap, RecordDto} from './interfaces';
+import { ExtractionFilter, ExtractionResultDto, RecordFilter, RecordsMap, RecordDto, EntryRecord, EntryRecordFilter} from './interfaces';
 import { RCApiOptions } from '../http';
 import { CollectionPage } from '../common';
 
@@ -59,3 +59,11 @@ export function exportRecordsCsv(filter: ExtractionFilter, options?: RCApiOption
     });
 }
 
+export function listEntryRecords(filter: EntryRecordFilter, options?: RCApiOptions): Observable<CollectionPage<EntryRecord>> {
+    return RightConsents.http<CollectionPage<EntryRecord>>({
+        method: 'GET',
+        url: `${RightConsents.config.apiRoot}/records/entryrecords`,
+        params: filter,
+        options
+    });
+}
