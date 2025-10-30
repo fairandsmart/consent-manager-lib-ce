@@ -1,6 +1,6 @@
 {
   "name": "@fairandsmart/consents-ce",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "TypeScript mappings for the Fair&Smart's Right Consents Community features",
   "sideEffects": false,
   "scripts": {},
@@ -45,6 +45,7 @@
     "./subjects": "./subjects/index.js",
     "./system": "./system/index.js",
     "./tokens": "./tokens/index.js",
-    "./users": "./users/index.js"
+    "./users": "./users/index.js",
+    "./transactions": "./transactions/index.js"
   }
 }
