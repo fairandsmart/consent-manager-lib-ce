@@ -71,9 +71,12 @@ export interface EntryRecord {
 export interface EntryRecordFilter {
     subject: string;
     type: string;
+    status?: string;
     page?: number;
     size?: number;
     recordsOnly?: boolean;
+    order?: string;
+    direction?: SortDirection;
 }
 
 export interface OperatorLogElement {
