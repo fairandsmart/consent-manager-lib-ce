@@ -67,3 +67,12 @@ export function listEntryRecords(filter: EntryRecordFilter, options?: RCApiOptio
         options
     });
 }
+
+export function listRecordHistory(filter: RecordFilter, options?: RCApiOptions): Observable<RecordDto[]> {
+    return RightConsents.http<RecordDto[]>({
+        method: 'GET',
+        url: `${RightConsents.config.apiRoot}/records/history`,
+        params: filter,
+        options
+    });
+}
