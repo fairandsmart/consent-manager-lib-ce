@@ -98,6 +98,9 @@ export interface ConsentContext {
 
     /** used to tell where consent can be managed if needed */
     managementUrl?: string;
+
+    /** Delay before redirecting the user to the callback URL (in milliseconds). */
+    callbackTriggerDelay?: number;
 }
 
 export interface ConsentTransaction {
