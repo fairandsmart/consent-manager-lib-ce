@@ -24,6 +24,11 @@ export enum ConfirmationConfigKeys {
     SENDER_PHONE_KEY = 'senderPhone'
 }
 
+export enum DisplayChoicesInEmail {
+    NONE = 'NONE',
+    SIMPLE = 'SIMPLE'
+}
+
 /**
  * The ConsentContext is used to generate a token. This token is used:
  * - To generate a form in a browser for the user to fill
@@ -101,6 +106,9 @@ export interface ConsentContext {
 
     /** Delay before redirecting the user to the callback URL (in milliseconds). */
     callbackTriggerDelay?: number;
+
+    /** Choices have to be displayed in confirmation email or not */
+    displayChoicesInEmail?: DisplayChoicesInEmail;
 }
 
 export interface ConsentTransaction {
