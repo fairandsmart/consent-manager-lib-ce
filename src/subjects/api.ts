@@ -1,14 +1,24 @@
 import { Observable } from 'rxjs';
 import { RightConsents } from '../api';
-import { SubjectDto } from './interfaces';
+import { SubjectDto, SubjectFilter } from './interfaces';
 import { RecordsMap } from '../records';
 import { RCApiOptions } from '../http';
+import { CollectionPage } from '../common';
 
 export function listSubjects(name: string, options?: RCApiOptions): Observable<SubjectDto[]> {
     return RightConsents.http<SubjectDto[]>({
         method: 'GET',
         url: `${RightConsents.config.apiRoot}/subjects`,
         params: { name },
+        options
+    });
+}
+
+export function getSubjects(filter: SubjectFilter, options?: RCApiOptions): Observable<CollectionPage<SubjectDto>> {
+    return RightConsents.http<CollectionPage<SubjectDto>>({
+        method: 'GET',
+        url: `${RightConsents.config.apiRoot}/subjects/paged`,
+        params: filter ,
         options
     });
 }

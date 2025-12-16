@@ -7,3 +7,12 @@ export interface SubjectDto {
     supersededBy: string;
     superseded: string[];
 }
+
+export interface SubjectFilter {
+    name?: string;
+    emailAddress?: string;
+    page?: number;
+    size?: number;
+    order?: string;
+    direction?: SortDirection;
+}
