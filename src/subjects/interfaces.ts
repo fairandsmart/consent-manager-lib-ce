@@ -1,3 +1,5 @@
+import { SortDirection } from "../common";
+
 export interface SubjectDto {
     id: string;
     name: string;
