@@ -15,8 +15,13 @@ export interface TransactionDto {
     state: string;
     creationtimestamp: string;
     expirationtimestamp: string;
+    emailReceipt: EmailReceiptDto;
 }
-
+export interface EmailReceiptDto {
+    status: boolean;
+    createdAt: string;
+    errorMessage: string;
+}
 export interface TransactionFilter {
     page?: number;
     size?: number;
