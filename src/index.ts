@@ -14,6 +14,7 @@ export * as SystemResource from './system';
 export * as TokensResource from './tokens';
 export * as UsersResource from './users';
 export * as TransactionResource from './transactions';
+export * as ConsumptionResource from './consumption';
 
 export { ConsentCollector } from './forms';
 
