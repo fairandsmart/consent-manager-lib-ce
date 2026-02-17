@@ -5,6 +5,7 @@ import {
   ModelData,
   ModelEntryDto,
   ModelEntryExportDto,
+  ModelEntryShareDto,
   ModelFilter,
   ModelVersionDto,
   ModelVersionDtoLight,
@@ -206,6 +207,23 @@ export function importEntry(dto: ModelEntryExportDto, options?: RCApiOptions): O
     method: 'POST',
     url: `${RightConsents.config.apiRoot}/models/import`,
     body: dto,
+    options
+  });
+}
+
+export function getSharingPartner(id: string, options: RCApiOptions): Observable<ModelEntryShareDto> {
+  return RightConsents.http<ModelEntryDto>({
+    method: 'GET',
+    url: `${RightConsents.config.apiRoot}/models/${id}/sharing-partner`,
+    options
+  });
+}
+
+export function shareModelToPartner(modelEntryShareDto: ModelEntryShareDto, options: RCApiOptions): Observable<ModelEntryShareDto> {
+  return RightConsents.http<ModelEntryDto>({
+    method: 'POST',
+    url: `${RightConsents.config.apiRoot}/models/share`,
+    body:modelEntryShareDto,
     options
   });
 }
