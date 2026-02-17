@@ -344,3 +344,8 @@ export interface ModelEntryDto extends ModelEntryDtoPartial {
 export interface ModelEntryExportDto extends ModelEntryDtoPartial {
     versions: ModelVersionDto[];
 }
+
+export interface ModelEntryShareDto {
+    modelEntryId: string;
+    partnerIds: string[];
+}
