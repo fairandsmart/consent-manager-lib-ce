@@ -211,16 +211,16 @@ export function importEntry(dto: ModelEntryExportDto, options?: RCApiOptions): O
   });
 }
 
-export function getSharingPartner(id: string, options: RCApiOptions): Observable<ModelEntryShareDto> {
-  return RightConsents.http<ModelEntryDto>({
+export function getSharingPartner(id: string, options?: RCApiOptions): Observable<ModelEntryShareDto> {
+  return RightConsents.http<ModelEntryShareDto>({
     method: 'GET',
     url: `${RightConsents.config.apiRoot}/models/${id}/sharing-partner`,
     options
   });
 }
 
-export function shareModelToPartner(modelEntryShareDto: ModelEntryShareDto, options: RCApiOptions): Observable<ModelEntryShareDto> {
-  return RightConsents.http<ModelEntryDto>({
+export function shareModelToPartner(modelEntryShareDto: ModelEntryShareDto, options?: RCApiOptions): Observable<ModelEntryShareDto> {
+  return RightConsents.http<ModelEntryShareDto>({
     method: 'POST',
     url: `${RightConsents.config.apiRoot}/models/share`,
     body:modelEntryShareDto,
